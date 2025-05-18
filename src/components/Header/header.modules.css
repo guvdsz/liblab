@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 0 25px;
+    background-color: #fefefe;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+.nav-link {
+    color: #000;
+    transition: opacity .3s ease-out;
+}
+
+.nav-link:hover {
+    opacity: .5;
+}
