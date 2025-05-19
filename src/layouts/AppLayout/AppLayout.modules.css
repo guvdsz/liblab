@@ -1,4 +1,6 @@
 main {
+  display: flex;
+  flex-direction: column;
   background-color: #f9fafb;
   flex: 1;
 }

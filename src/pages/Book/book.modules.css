@@ -1,0 +1,44 @@
+.book-container {
+  display: flex;
+  padding: 50px 0;
+  justify-content: center;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+  gap: 25px;
+  border: 1px solid #333;
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.book img {
+  width: 150px;
+  height: 250px;
+}
+
+.book a,
+.book button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+  color: black;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: border 0.3s ease-out;
+  cursor: pointer;
+}
+
+.book a:hover, .book button:hover {
+    border: 1px solid #333;
+}
+
+.btn-control {
+  display: flex;
+  gap: 25px;
+}
