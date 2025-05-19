@@ -32,5 +32,5 @@ export default function Favorites() {
     );
   }
 
-  return <section className="favorites-list">{favoritesList}</section>;
+  return <section className="favorites-list">{favoritesList.length > 0 ? favoritesList : <p>No favorites found.</p>}</section>;
 }

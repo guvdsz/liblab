@@ -29,7 +29,7 @@ body {
   width: 50px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 8px solid #000;
+  border: 8px solid #333;
   animation:
     l20-1 0.8s infinite linear alternate,
     l20-2 1.6s infinite linear;
