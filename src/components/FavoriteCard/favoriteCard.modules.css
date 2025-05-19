@@ -1,0 +1,26 @@
+.favorite-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 750px;
+    width: 100%;
+    transition: border .3s ease-out;
+}
+
+.favorite-card a {
+    background-color: #efefef;
+    color: black;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: border .3s ease-out;
+    height: fit-content;
+}
+
+.favorite-card a:hover {
+    border:  1px solid #333;
+}

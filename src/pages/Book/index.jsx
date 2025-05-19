@@ -7,6 +7,7 @@ import { Heart } from "lucide-react";
 export default function Book() {
   const [book, setBook] = useState({});
   const [loading, setLoading] = useState(true);
+  const [isFavorite, setIsFavorite] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,12 +19,29 @@ export default function Book() {
         console.log(error);
       } finally {
         setLoading(false);
+        const favorites = JSON.parse(localStorage.getItem("favorites"));
+        if (favorites) {
+          if (favorites.some((item) => item.id === id)) {
+            setIsFavorite(true);
+          }
+        }
       }
     }
     getBook();
   }, [id]);
 
-  console.log(book);
+  function handleFavorite() {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    if (favorites.some((item) => item.id === id)) {
+      setIsFavorite(false);
+      const newFavorites = favorites.filter((item) => item.id !== id);
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+      return;
+    }
+    favorites.push(book);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    setIsFavorite(true);
+  }
 
   if (loading) {
     return (
@@ -46,8 +64,8 @@ export default function Book() {
           <strong>Author(s):</strong> {book.authors.join(", ")}
         </span>
         <div className="btn-control">
-          <button>
-            <Heart />
+          <button onClick={handleFavorite}>
+            <Heart color={isFavorite ? "#FF0808" : "#000"} />
           </button>
           <a href={book.infoLink} target="_blank">
             Buy

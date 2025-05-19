@@ -13,7 +13,7 @@ export default function BookCard({ image, title, description, author, id }) {
           <span>{author}</span>
         </div>
       </div>
-      <Link to={`/books/${id}`}>Acessar</Link>
+      <Link to={`/books/${id}`}>Access</Link>
     </div>
   );
 }
